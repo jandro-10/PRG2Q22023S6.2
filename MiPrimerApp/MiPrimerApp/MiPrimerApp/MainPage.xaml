@@ -1,21 +1,23 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="MiPrimerApp.MainPage">
+             x:Class="MiPrimerApp.MainPage"
+             xmlns:local ="clr-namespace:MiPrimerApp.ViewModels"
+             >
 
-    <StackLayout> 
-        <Frame BackgroundColor="#2196F3" Padding="24" CornerRadius="0">
-            <Label Text="Bienvenidos a mi App" HorizontalTextAlignment="Center" TextColor="White" FontSize="20"/>
-        </Frame>
+    <ContentPage.BindingContext>
+        <local:viewModelCirculo></local:viewModelCirculo>
+    </ContentPage.BindingContext>
+    
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Bienvenido a mi app de Circulos"/>
 
-        <Image  Source="https://e7.pngegg.com/pngimages/660/375/png-clipart-mario-mario.png"
-                Aspect="AspectFit"
-                HorizontalOptions="Center" />
+            <Entry  Text="{Binding Radio}" Keyboard="Numeric"  ></Entry>
 
-        <Label  Text="Esta es mi aplicación de Mario Bross"
-                FontSize="18"
-                HorizontalTextAlignment="Center" />
+            <Button Command="{Binding crear}"  Text="Crear"></Button>
 
-    </StackLayout>
-
+            <Label Text="{Binding Resultado}" />
+        </StackLayout>
+    </ContentPage.Content>
 </ContentPage>
