@@ -17,7 +17,14 @@
 
             <Button Command="{Binding crear}"  Text="Crear"></Button>
 
-            <Label Text="{Binding Resultado}" />
+            <ListView x:Name="EmployeeView"
+                ItemsSource="{Binding lista}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextCell Text="{Binding getToString}" />
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
