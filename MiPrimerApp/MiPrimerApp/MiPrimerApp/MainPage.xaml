@@ -9,6 +9,8 @@
         <local:viewModelCirculo></local:viewModelCirculo>
     </ContentPage.BindingContext>
     
+    <!-- Hola este es un comentario -->
+    
     <ContentPage.Content>
         <StackLayout>
             <Label Text="Bienvenido a mi app de Circulos"/>
@@ -17,7 +19,7 @@
 
             <Button Command="{Binding crear}"  Text="Crear"></Button>
 
-            <ListView x:Name="EmployeeView"
+            <ListView 
                 ItemsSource="{Binding lista}">
                 <ListView.ItemTemplate>
                     <DataTemplate>
